@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=S, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form name="form">
+        <h1>Vervang het woord</h1>
+        <p>Zin:
+            <input type="text" name="zin"> </p>
+        <p>Zoek dit woord:
+            <input type="text" name="zoek"></p>
+        <p>Dit woord komt in de plaats:
+            <input type="text" name="vervang"></p>
+        <p><input type="button" value="Vervang"
+                onclick="vervangen(doc,document.form.zoek.value, document.form.vervang.value);"></p>
+        <p>De nieuwe zin:
+            <input type="search" name="nieuwe"></p>
+    </form>
+
+    <script>
+        var doc = "Vervang het woord";
+
+        function vervangen(doc, woord, nieuwewoord) {
+            if (doc.indexOf(woord) != -1) {
+                deel1 = doc.substr(0, doc.indexOf(woord)) + nieuwewoord;
+                deel2 = doc.substring(doc.indexOf(woord) + woord.length, doc.length);
+                doc = deel1 + deel2;
+            }
+            document.write(doc);
+        }
+
+    </script>
+</body>
+
+</html>
